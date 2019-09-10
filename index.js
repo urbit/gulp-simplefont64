@@ -38,7 +38,7 @@ module.exports = function() {
           fontFamily = fontAttrs.shift(),
           css = '@font-face { font-family: ' + fontFamily + '; ';
 
-          css += 'src: url(data:' + mime.lookup(file.path) + ';charset=utf-8;base64,' + fontToBase64 + ');}';
+          css += 'src: url(data:' + mime.lookup(file.path) + ';charset=utf-8;base64,' + fontToBase64 + ');';
 
       css += fontAttrs.map(function(attr) {
         // Format our font attributes
@@ -47,7 +47,7 @@ module.exports = function() {
         return styleRules[attr] ? prev + ' ' + styleRules[attr] : prev;
       }, String());
 
-
+      css += '}'
 
       file.contents = new Buffer(css);
       file.path = gutil.replaceExtension(file.path, '.css');

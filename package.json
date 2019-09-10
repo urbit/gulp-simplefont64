@@ -1,6 +1,6 @@
 {
   "name": "gulp-simplefont64",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create base64 data from font files and group them into appropriate font families",
   "main": "index.js",
   "scripts": {
