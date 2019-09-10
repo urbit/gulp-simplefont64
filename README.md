@@ -1,10 +1,6 @@
 # gulp-simplefont64
 
-[![Build Status](https://travis-ci.org/joshblack/gulp-simplefont64.png?branch=master)](https://travis-ci.org/joshblack/gulp-simplefont64) [![NPM version](https://badge.fury.io/js/gulp-simplefont64.png)](http://badge.fury.io/js/gulp-simplefont64)
-
-> Encode base64 data from font-files and store the resulting fonts grouped according to font-family in a css file.
-
-Encoding fonts in base64 is great but often you just end up with a list of font-families like: `PlayfairDisplay-Black`, `PlayfairDisplay-Regular`, `PlayfairDisplay-Italic`, instead of just grouping them all under the same font-family and giving the font faces the appropriate rule declarations.
+This is a fork of [gulp-simplefont64](https://github.com/joshblack/gulp-simplefont64) which changes the order of the `@font-face` properties. We needed to do this in order to make the output valid for some reason.
 
 For `gulp-simplefont64`, just name your fonts in the following format:
 
@@ -39,13 +35,13 @@ gulp.task('fonts', function() {
     |      +-- PlayfairDisplay-Black-Italic.otf
 ```
 
-#### Result of plugin: 
+#### Result of plugin (fork):
 
-```html
+```css
 @font-face {
-  font-family: PlayfairDisplay;
+  font-family: Inter;
+  src: url("inter/data: font/opentype;charset=utf-8; base64,T1RUTwAMAIAAAwBAQ0ZGICNw7jIAABE8AAFw1UdERUYSkBS7AAGPSAAAAERHUE9TXJ5OgwABqaAAAJDYR1NVQmMeE9EAAY+MAAAaFE9TLzJuRIYyAAABMAAAAGBjbWFw5kH1tQAACbgAAAdkaGVhZANwzXwAAADMAAAANmhoZWERJQwdAAABBAAAACRobXR4PCvh+gABghQAAA00bWF4cANNUAAAAAEoAAAABm5hbWUD6eGxAAABkAAACCdwb3N0/zwAKQAAERwAAAAgAAEAAAABAQbN9rJqXw889QADCAAAAAAAzmtAdgAAAADOa0B2/Qr9/);
   font-weight: 800;
   font-style: italic;
-  src: url("playfair-display/data: font/opentype; base64,T1RUTwAMAIAAAwBAQ0ZGICNw7jIAABE8AAFw1UdERUYSkBS7AAGPSAAAAERHUE9TXJ5OgwABqaAAAJDYR1NVQmMeE9EAAY+MAAAaFE9TLzJuRIYyAAABMAAAAGBjbWFw5kH1tQAACbgAAAdkaGVhZANwzXwAAADMAAAANmhoZWERJQwdAAABBAAAACRobXR4PCvh+gABghQAAA00bWF4cANNUAAAAAEoAAAABm5hbWUD6eGxAAABkAAACCdwb3N0/zwAKQAAERwAAAAgAAEAAAABAQbN9rJqXw889QADCAAAAAAAzmtAdgAAAADOa0B2/Qr9/ 
 };
 ```
